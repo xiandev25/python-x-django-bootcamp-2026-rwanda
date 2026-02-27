@@ -1,5 +1,5 @@
 class Book:
-    def BooK(self, title, author):
+    def __init__(self, title, author, page):
         self.title = title
         self.author = author
         self.page = page
@@ -16,9 +16,9 @@ class Book:
         return False
 
 class Library:
-    def __init__(self, name):
+    def __init__(self, name, books=None):
         self.name = name
-        self.books = []
+        self.books = books if books is not None else []
 
     def add_book(self, book):
         self.books.append(book)
