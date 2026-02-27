@@ -30,10 +30,7 @@ class Library:
         return f"{self.name} has {len(self.books)} books"
 
     def __getitem__(self, index):
-        try:
-            return self.books[index]
-        except IndexError:
-            return f"Book at {index} not found"
+        return self.books[index]
 
     def __len__(self):
         return len(self.books)
