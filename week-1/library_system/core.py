@@ -26,6 +26,15 @@ class Library:
     def remove_book(self, book):
         self.books.remove(book)
 
+    def borrow_book(self, book):
+        if book in self.books:
+            self.books.remove(book)
+        else:
+            raise ValueError(f"Book {book} not found in library {self.name}")
+
+    def return_book(self, book):
+        self.books.append(book)
+
     def __str__(self):
         return f"{self.name} has {len(self.books)} books"
 
@@ -34,6 +43,9 @@ class Library:
             return self.books[index]
         except IndexError:
             raise IndexError(f"Book at {index} not found")
+
+    def __contains__(self, book):
+        return book in self.books
 
     def __len__(self):
         return len(self.books)
