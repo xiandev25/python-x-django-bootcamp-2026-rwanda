@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+share/
+pyvenv.cfg
+
+# Django
+*.sqlite3
+*.sqlite3-journal
+local_settings.py
+staticfiles/
+media/
+*.log
+
